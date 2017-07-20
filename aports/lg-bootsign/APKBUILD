@@ -1,0 +1,20 @@
+pkgname=lg-bootsign
+pkgver="1.0"
+pkgrel=1
+pkgdesc="Tool for signing boot images with an LG magic key, to circumvent locked bootloaders on those devices"
+url="https://github.com/Nutcake/lg-bootsign"
+arch="noarch"
+license="APACHE2"
+depends="python3"
+source="$pkgname-$pkgver.py::https://raw.githubusercontent.com/Nutcake/lg-bootsign/master/${pkgname}.py"
+options="!check"
+
+build() {
+	cp "$srcdir"/"$pkgname"-"$pkgver".py "$srcdir"/"$pkgname"
+}
+
+package() {
+	install -Dm755 "$srcdir"/"$pkgname" "$pkgdir"/usr/bin/"$pkgname"
+}
+
+sha512sums="fd9686eee3d9f799bef0a0f8d2e3ffc159a012777ad97de13711d465b85aa2cde7d2b3d084061bc44ecbb3fd887b00860bc309089df1657581060caa63f6e63c  lg-bootsign-1.0.py"
