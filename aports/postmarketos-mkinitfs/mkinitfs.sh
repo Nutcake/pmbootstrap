@@ -160,6 +160,10 @@ create_bootimg()
 		--tags_offset "${deviceinfo_flash_offset_tags}" \
 		--pagesize "${deviceinfo_flash_pagesize}" \
 		-o "${outfile/initramfs-/boot.img-}"
+	[ "${deviceinfo_sign_lg_bootimage}" == "true" ] || return
+	echo "==> initramfs: signing boot.img with lg magic key"
+	lg-bootsign "${outfile/initramfs-/boot.img-}"
+	mv "${outfile/initramfs-/boot_bumped.img-}" "${outfile/initramfs-/boot.img-}"
 }
 
 

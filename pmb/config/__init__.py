@@ -183,6 +183,7 @@ deviceinfo_attributes = [
     "flash_offset_tags",
     "flash_pagesize",
     "kernel_cmdline",
+    "sign_lg_bootimage"
 
     # weston
     "weston_pixman_type",

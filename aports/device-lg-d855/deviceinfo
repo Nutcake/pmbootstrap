@@ -13,6 +13,7 @@ deviceinfo_external_disk="true"
 deviceinfo_external_disk_install="true"
 deviceinfo_flash_methods="fastboot"
 deviceinfo_arch="armhf"
+deviceinfo_sign_lg_bootimage="true"
 
 # Fastboot related
 deviceinfo_generate_bootimg="true"
